@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Table" EntityType="Model1.Store.Table" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Brand" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Model" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="YearOfIssue" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="TypeOfEngine" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="PowerOfEngine" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="SizeOfEngine" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Cost" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Count" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Color" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Condition" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Image" Type="varchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+</Schema>

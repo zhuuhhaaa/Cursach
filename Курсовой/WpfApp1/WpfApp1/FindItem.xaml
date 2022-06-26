@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp1.FindItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Icon="Images/48688.png"
+        Title="Поиск" Height="300" Width="830">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="3"  Style="{DynamicResource GridStyle}"></Grid>
+        <DataGrid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" FontWeight="SemiBold" CanUserSortColumns="True" FontFamily="Trebuchet MS" x:Name="DGClothes" Margin="15,15,15,24" AutoGenerateColumns="False" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="_brand" CanUserSort="False" Header="Марка" FontFamily="Trebuchet MS" Binding="{Binding Path=Brand}" Width="1.5*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_model" CanUserSort="False" Header="Модель" FontFamily="Trebuchet MS" Binding="{Binding Path=Model}" Width="1.5*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_yearof" CanUserSort="False" Header="Год" FontFamily="Trebuchet MS" Binding="{Binding Path=YearOfIssue}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_typeof" CanUserSort="False" Header="Двигатель" FontFamily="Trebuchet MS" Binding="{Binding Path=TypeOfEngine}" Width="1.5*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_sizeof" CanUserSort="False" Header="Объем" FontFamily="Trebuchet MS" Binding="{Binding Path=SizeOfEngine}" Width="1.5*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_color" CanUserSort="False" Header="Цвет" FontFamily="Trebuchet MS" Binding="{Binding Path=Color}" Width="1*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_condition" CanUserSort="False" Header="Состояние" FontFamily="Trebuchet MS" Binding="{Binding Path=Condition}" Width="1.4*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_count" CanUserSort="False" Header="Гос номер"  FontFamily="Trebuchet MS" Binding="{Binding Path=Count}" Width="1.5*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="_cost" CanUserSort="True" Header="Цена" FontFamily="Trebuchet MS" Binding="{Binding Path=Cost}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridHyperlinkColumn Width="*" CanUserSort="False" Binding="{Binding Path=HyperlinkText}" IsReadOnly="True">
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style>
+                            <EventSetter Event="Hyperlink.Click" Handler="DataGridHyperlinkColumn_Click"></EventSetter>
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="0" Grid.Column="2" Margin="5,20,5,33" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" FontWeight="Bold" >Двигатель</TextBlock>
+            <CheckBox Grid.Row="1" Name="Benzin" Content="Бензиновый" Click="Benzin_Click"></CheckBox>
+            <CheckBox Grid.Row="2" Name="Diezel" Content="Дизель" Click="Diezel_Click"></CheckBox>
+            <CheckBox Grid.Row="3" Name="Electro" Content="Электрический" Click="Electro_Click"></CheckBox>
+
+            <TextBlock Grid.Row="4" Margin="0 0 0 5" FontWeight="Bold">Состояние</TextBlock>
+            <CheckBox Grid.Row="5" Name="Xoroshee" Content="Хорошее" Click="Xoroshee_Click"></CheckBox>
+            <CheckBox Grid.Row="6" Name="Novoe" Content="Новое" Click="Novoe_Click" ></CheckBox>
+            <CheckBox Grid.Row="7" Name="Ploxoe" Content="Плохое" Click="Ploxoe_Click"></CheckBox>
+        </Grid>
+    </Grid>
+</Window>
